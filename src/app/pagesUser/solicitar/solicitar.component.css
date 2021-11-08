@@ -1,0 +1,206 @@
+*{
+	padding: 0;
+	margin: 0;
+    box-sizing: border-box;
+    font-family: "Sunflower", sans-serif;
+    outline: none;
+    text-decoration: none;
+}
+
+
+section{
+    width: 100%; 
+    height: 100%;
+	left:363px; 
+	top: 0; 
+    z-index: 1000;
+	position: fixed;
+    background: black;
+    overflow: hidden;
+}
+
+.ls{
+    position: fixed;
+    height: 680px;
+    top: 5.2rem;
+    left: 653px;
+    width:1000px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: translateX(-20%);
+}
+
+.container{
+    background: #615F5F;
+    max-width:780px;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-left: 95px;
+}
+
+.circulo{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    margin: 5px 730px;
+    font-size: 20px;
+    border-radius: 80px;
+    background: #C4C4C4;
+}
+
+h3{
+    margin-top: 3px;
+    margin-left: 8px;
+}
+
+.circulo:hover,.circulo:active{
+    background: #343434;
+    color: #fff;
+}
+
+.con{
+    max-width: 789px;
+    width: 100%;
+    height:46px;
+    border-radius: 20px 20px 0px 0px;
+    background: #602290;
+}
+
+img{
+    height: 70px;
+    width: 70px;
+    border-radius: 80%;
+    margin-top: 5px;
+    margin-left: -200px;
+}
+
+.conAmigos{
+    background: rgba(3, 3, 3, 0.62);
+    border-radius: 20px;
+    max-width:689px;
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+}
+
+
+button{
+    left: 70%;
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    margin: 40px auto 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 13px;
+    padding: 10px;
+    box-shadow: none;
+	border: none;
+}
+
+.lsb{
+    background: #32BEA6;
+}
+
+.lsb:hover,.lsb:active{
+    background: #1b8775;
+}
+
+
+.lsbB{
+    background: #A10A0A;
+}
+
+.lsbB:hover,.lsbB:active{
+    background: #6c0b0b;
+}
+
+.containers{
+    width:710px;
+    margin-top: 20px;
+    height:559px;
+    
+    overflow: auto; 
+    position: relative;
+    overflow-y: auto;
+}
+
+.containers::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;  /* Tamaño del scroll en horizontal */
+}
+
+.containers::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 4px;
+}
+
+.containers::-webkit-scrollbar-thumb:hover {
+    background: #4e0041;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.containers:-webkit-scrollbar-thumb:active {
+   background-color:#4e0041;
+}
+
+.containers::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 4px;
+
+}
+
+.containers::-webkit-scrollbar-track:hover,
+.containers::-webkit-scrollbar-track:active {
+  background: white ;
+}
+
+.containerButton{
+    margin-top: -50px;
+    height: 60px;
+    width: 200px;
+    margin-left: 500px;
+}
+
+.icon{
+    width: 40px;
+    height: 40px;
+    margin-left: -5px;
+    margin-top: -5px;
+}
+
+.conDatos,.conText{
+    height: 60px;
+    width: 350px;
+    margin-top:0px;
+}
+
+h1{
+    color:#fff;
+    font-size: 20px;
+    margin-left: -200px;
+    margin-top:0px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    
+}
+
+.conText{
+    margin-top: -50px;
+    height: 30px;
+    margin-left: 120px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
