@@ -1,0 +1,109 @@
+
+section{
+    width:100%;
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index:1000;
+}
+
+.container{
+    width: 95%; 
+    height: 100%;
+    top:0;
+    left: 52%;
+    display:block;
+    grid-template-columns: repeat(2,2fr);
+    grid-gap :1rem;
+    position:absolute;
+    transform:translateX(-52%);
+}
+
+.con{
+    background: black;
+    width: 40%; 
+    height: 100%;
+    left: 0;
+    float: left;
+}
+
+.ls{
+    width: 60%; 
+    height: 100%;
+    left: 50%;
+    float: left;
+}
+
+.barra,.barraChat{
+    width: 100%;
+    height: 10%;
+    background: grey;
+}
+
+.barra{
+    position: absolute;
+    background: peru;
+    top: 0;
+    width: 40.1%;
+    left: 20.8%;
+    transform:translateX(-52%);
+}
+
+.barraChat{
+    background: pink;
+}
+
+.lista{
+    width: 100%;
+    height: 90%;
+    background: red;
+}
+
+.containerChat{
+    width: 100%;
+    height: 80%;
+    background: #5A5A5A;
+}
+
+.conButtons{
+    background:yellow;
+    width: 100%;
+    height: 10%;
+
+}
+
+.confi{
+    width: 100%;
+    height: 10%;
+    border-radius: 20px 20px 0px 0px;
+    background:blue;
+}
+
+
+.conSearch{
+    height:60%;
+    width:100%;
+    position: absolute;
+    top: 20%;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 8px;
+    background: blue;
+    transform: (-52%,52%);
+}
+
+.search{
+    left: 70%;
+    border-radius:5px;
+    width: 500px;
+    height: 40px;
+    border: 1px solid #393939;
+    margin-top: 2px;
+    padding: 0 15px;
+    font-size: 15px;
+    position: static;
+
+}

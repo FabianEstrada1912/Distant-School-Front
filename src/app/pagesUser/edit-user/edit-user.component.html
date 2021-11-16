@@ -11,39 +11,41 @@
              <img src="https://i.pinimg.com/564x/7b/cb/e8/7bcbe80ddf00315bab91d13404c5d592.jpg" alt="">
              <label class="circlePhoto">x<input type="file" name="image" accept="image/png, .jpeg, .jpg, image/gif"/></label>
          </div>
-         <div class="components">
+         <form  [formGroup]= "form"  (ngSubmit)="guardar()">
+            <div class="components">
  
-             <div class="conComp">
-                 <div class="conInput1">
-                     <label class="labelS">Nombre</label>
-                     <input type="text">
-                 </div>
-                 <div class="conInput2">
-                     <label class="labelS">Apellido</label>
-                     <input type="text">
-                 </div>
-             </div>
- 
-             <div class="conComp">
-                 <div class="conInput1">
-                     <label class="labelS1">Correo Electronico</label>
-                     <input type="text">
-                 </div>
-                 <div class="conInput2">
-                     <label class="labelS">Usuario</label>
-                     <input type="text">
-                 </div>
-             </div>
- 
-             <div class="conComp">
-                 <div class="conText">
-                     <label class="labelDS">Descripción</label><br>
-                     <textarea ></textarea>
-                 </div>
-             </div><br>
- 
-             <button>Guardar</button>
-         </div>
+                <div class="conComp">
+                    <div class="conInput1">
+                        <label class="labelS">Nombre</label>
+                        <input type="text" formControlName="first_name">
+                    </div>
+                    <div class="conInput2">
+                        <label class="labelS">Apellido</label>
+                        <input type="text" formControlName="last_name">
+                    </div>
+                </div>
+    
+                <div class="conComp">
+                    <div class="conInput1">
+                        <label class="labelS1">Correo Electronico</label>
+                        <input type="email" formControlName="email">
+                    </div>
+                    <div class="conInput2">
+                        <label class="labelS">Usuario</label>
+                        <input type="text"  formControlName="username">
+                    </div>
+                </div>
+    
+                <div class="conComp">
+                    <div class="conText">
+                        <label class="labelDS">Descripción</label><br>
+                        <textarea formControlName="description" rows="10"></textarea>
+                    </div>
+                </div><br>
+    
+                <button [disabled]="form.valid==false">Guardar</button>
+            </div>
+         </form>
      </div>
     </div>
  </section>

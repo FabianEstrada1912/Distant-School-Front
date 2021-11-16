@@ -1,0 +1,165 @@
+@import url('barra.css');
+@import url('menu.css');
+@import url('contenido.css');
+
+*{
+	padding: 0;
+	margin: 0;
+    box-sizing: border-box;
+    font-family: "Sunflower", sans-serif;
+    outline: none;
+    text-decoration: none;
+}
+
+
+#check{
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    z-index: 90000;
+    cursor: pointer;
+    opacity: 0;
+    display: none;
+}
+
+#check:checked ~ .hamburger-menu-container .hamburger-menu div{
+    background-color: transparent;
+}
+
+#check:checked ~ .hamburger-menu-container .hamburger-menu div:before{   
+    transform: translateY(0) rotate(-45deg);
+}
+
+#check:checked ~ .hamburger-menu-container .hamburger-menu div:after{
+    transform: translateY(0) rotate(45deg);
+}
+
+@keyframes animation{
+    from{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 920px){
+
+    
+    .hamburger-menu-container{
+        display: flex;
+    }
+
+    #check{
+        display: block;
+    }
+
+    header{
+        width:100%;
+        position: fixed;
+    }
+
+    .nav-btn{
+        position: fixed;
+        height: calc(110vh - 3rem);
+        top: 2.4rem;
+        left: 0;
+        width: 100%;
+        background-color: #4c4c4c;;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transform: translateX(100%);
+        
+    }
+
+    #check:checked ~ .nav-btn{
+        transform: translateX(0);
+    }
+
+    #check:checked ~ .nav-btn .nav-link,
+    #check:checked ~ .nav-btn{
+        animation: animation .5s ease forwards var(--i);
+    }
+
+    .divBusqueda{
+        width: 90%;
+        margin-left: 5px;
+        top:20px;
+        position: fixed;
+
+    }
+    
+    .search{
+       width:100%;
+    }
+
+    .buttonHeader{
+        width: 100%;
+    }
+
+    .divButton{ 
+        width: 90%;
+        margin-left: 5px;
+        top:100px;
+        position: fixed;  
+    }
+
+    .container{ 
+        width: 100%; 
+        height: calc(100vh -100rem);
+        top: 0%;
+        left: 52%;
+        position: absolute;
+        overflow-x: hidden;
+        overflow-y:scroll;
+        transform:translateX(-52%);
+    }
+
+    .containers{
+        width:600px;
+        height: calc(100vh -100rem);
+        top: 0%;
+        margin-left: 20px;
+    }
+
+    .con{
+        width:340px;
+        height: 120px;
+        border-radius: 10px;
+        margin-top: 2%;
+        margin-left: 135px;
+    }
+
+    .conButtons{
+        height: 60px;
+        width: 200px;
+        margin-left: 180px;
+        margin-top: 5px;
+    }
+
+    .lsbM,.lsbB,.lsbC{
+        height: 40px;
+        width: 40px;
+        border-radius: 15px;
+    }
+
+    .icon{
+        height: 20px;
+        width: 20px;
+    }
+
+    .conTexto{
+        margin-top: -70px;
+        width: 180px;
+        font-size: 16px;
+    }
+    
+}

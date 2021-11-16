@@ -1,0 +1,75 @@
+@import url('contenido.css');
+
+*{
+	padding: 0;
+	margin: 0;
+    box-sizing: border-box;
+    font-family: "Sunflower", sans-serif;
+    outline: none;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 1150px){
+    .conImagen{
+        visibility: hidden;
+	}
+
+    aside{
+        width: 0px;
+        height: 0px;
+    }
+    
+    .container{
+        margin: 50px auto 0px;
+        width:310px;
+        height: 450px;
+    }
+
+    section{
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+    }
+	
+    button,input{
+        width: 300px;
+    }
+
+    .ls{
+        margin-left: -220px;
+    }
+
+    .ls2{
+        margin-left: -190px;
+    }
+
+}
+
+@media screen and (max-width: 920px){
+
+    .container{
+        margin: 50px auto 0px;
+        width:310px;
+    }
+
+    section{
+        left: 0px;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+    }
+	
+    button,input{
+        width: 300px;
+    }
+
+    .ls{
+        margin-left: -220px;
+    }
+
+    .ls2{
+        margin-left: -190px;
+    }
+}

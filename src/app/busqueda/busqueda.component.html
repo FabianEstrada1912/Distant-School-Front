@@ -1,0 +1,45 @@
+<header>
+    <div class="containeHeader">
+        <input type="checkbox" name="" id="check">
+
+        <div class="nav-btn">
+            <div class="divButton">
+                <button class="buttonHeader" > < </button>
+            </div>
+
+            <div class="divBusqueda">
+                <form [formGroup]="form" (ngSubmit)="guardar()">
+                    <input class="search"  type="search"  placeholder="Busqueda" formControlName="username">
+                </form>
+            </div>
+          
+        </div>
+       
+        <div class="hamburger-menu-container">
+            <div class="hamburger-menu">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="containers">
+
+            <div class="con"  *ngFor = 'let datos of datos'>
+                <div class="conDatos" >
+                    <img src="https://i.pinimg.com/564x/ab/14/f7/ab14f798f01530f3c4763d3702a9fe48.jpg" alt="">
+                    <div class="conTexto">
+                       <h1>{{datos['username']}}</h1>
+                       <h3>{{datos['first_name']}} {{datos['last_name']}}</h3>
+                    </div>
+                </div>
+                <div class="conButtons">
+                   <button class="lsbM"><img class="icon"  src="assets/icon/contactos.svg" alt="svg"></button>
+                   <button class="lsbB"><img class="icon"  src="assets/icon/mensaje.svg" alt="svg"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

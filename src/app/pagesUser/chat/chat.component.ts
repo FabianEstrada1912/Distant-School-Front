@@ -12,4 +12,10 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
   }
 
+   guardar(){
+    var overlay = document.getElementById('overlay'),
+    popup = document.getElementById('popup'), 
+    btnCerrarPopup = document.getElementById('btn-cerrar-popup');
+    this.accionCerrar(btnCerrarPopup,popup,overlay); 
+  }
 }

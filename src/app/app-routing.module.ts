@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 import { ChatComponent } from './pagesUser/chat/chat.component';
 import { ConfiguracionComponent } from './pagesUser/configuracion/configuracion.component';
 import { EditUserComponent } from './pagesUser/edit-user/edit-user.component';
@@ -24,8 +27,17 @@ const routes: Routes = [
         path:'creacion-grupos',
         component:ChatComponent,
       }
-    ]
-  }
+    ],
+  },{
+     path:'busqueda',
+     component:BusquedaComponent,
+  },{
+    path:'Dashboard',
+    component:DashboardComponent,
+  },{
+    path:'',
+    component:LoginComponent,
+  },
 ];
 
 @NgModule({

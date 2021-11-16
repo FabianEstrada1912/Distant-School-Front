@@ -1,0 +1,32 @@
+<aside>
+   <div class="conImagen">
+   </div>
+</aside>
+<section>
+   <div class="container">
+    <div class="con">
+        <form [formGroup]= "form"  (ngSubmit)="guardar()">
+            <div class="containerLogin">
+                
+                <div  class="inputOnes">
+                    <h1>Distant School</h1>
+                </div>
+
+                <div class="inputOne">
+                    <label class="ls">Usuario</label><br>
+                    <input type="text" formControlName="username">
+                </div><br>
+    
+                <div class="inputOne">
+                    <label class="ls2">Contraseña</label><br>
+                    <input type="password" formControlName="password">
+                </div><br>
+                
+                <div class="inputOne">
+                   <button [disabled]="form.valid==false">Loguearse</button>
+                </div>
+            </div>
+        </form>
+    </div>
+   </div>
+</section>

@@ -6,7 +6,6 @@
     outline: none;
     text-decoration: none;
 }
-
 .ls{
     position: fixed;
     height: 630px;
@@ -83,6 +82,10 @@ img{
     margin-top: 20px;
 }
 
+form{
+    margin-top:2px;
+    display:contents;
+}
 .components{
     margin-top: 5px;
     max-width: 750px;
@@ -116,7 +119,7 @@ input[type="file"] {
     display: none;
 }
 
-input[type="text"] {
+input[type="text"],input[type="email"] {
     left: 70%;
     border-radius: 5px 5px 5px 5px;
     width: 280px;

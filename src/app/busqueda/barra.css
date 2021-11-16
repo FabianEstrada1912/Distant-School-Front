@@ -1,0 +1,72 @@
+header{
+    background: rgb(118, 118, 118);
+	width: 100%; 
+    height: 40px;
+	left: 0; 
+	top: 0; 
+    z-index: 1000;
+	position: fixed; 
+}
+
+.nav-btn{
+    flex: 3;
+    display: flex;
+}
+
+.search{
+    margin-top: 5px;
+    min-width: 48%;
+	padding: 0 15px;
+	height: 25px;
+	width: 552px;
+	border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.buttonSearch{
+    height: 24.99px;
+    background: #ccc;
+    width: 25px;
+    border-radius: 0px 5px 5px 0px;
+    box-shadow: none;
+	border: none;
+}
+
+.containeHeader{
+    max-width: 65rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.buttonHeader{
+    background:#ffff;
+    width: 50px;
+    height: 30px;
+    color:black;
+    box-shadow: none;
+	border: none;
+    border-radius: 5px;
+}
+
+.buttonHeader:hover,.buttonHeader:active{
+    background: #c9c9c9;
+}
+
+.divButton{
+    margin-left: 10px;
+    margin-top:5px;
+}
+
+.divButtons{
+    margin-left: 50px;
+    margin-top:5px;
+}
+
+
+.divBusqueda{
+    margin-left: 130px;
+    margin-top:2px; 
+}

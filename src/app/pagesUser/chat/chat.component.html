@@ -175,4 +175,18 @@
             </div>
         </div>
     </div>
+    <div class="contenedor">
+        <div class="overlay" id="overlay">
+          <div class="popup" id="popup">
+            <button class="close" (click)="close()" id="close">x</button>
+            <h3>Elige tu imagen</h3>
+            <form >
+              <div class="contenedor-inputs">
+                <input type="text"formControlName="titleData" class="textContainer">
+              </div>
+              <input id="btn-cerrar-popup" type="submit" class="btn-submit" value="Guardar" class="button">
+            </form>
+          </div>
+        </div>
+      </div>
 </section>

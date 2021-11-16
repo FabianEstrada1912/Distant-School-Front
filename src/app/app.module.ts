@@ -8,6 +8,13 @@ import { EditUserComponent } from './pagesUser/edit-user/edit-user.component';
 import { SolicitarComponent } from './pagesUser/solicitar/solicitar.component';
 import { ChatComponent } from './pagesUser/chat/chat.component';
 import { PerfilComponent } from './pagesUser/perfil/perfil.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +23,17 @@ import { PerfilComponent } from './pagesUser/perfil/perfil.component';
     EditUserComponent,
     SolicitarComponent,
     ChatComponent,
-    PerfilComponent
+    PerfilComponent,
+    BusquedaComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

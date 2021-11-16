@@ -9,12 +9,23 @@
   
          <div class="containerEditar">
              <img src="https://i.pinimg.com/564x/7b/cb/e8/7bcbe80ddf00315bab91d13404c5d592.jpg" alt="">
-         </div>
+             <div class="conDatos">
+                <h1 style="font-size: 30px;">{{user['username']}}</h1>
+             </div>
+        </div>
          <div class="components">
- 
-           
- 
-             
+            <div class="conText">
+                <h3 class="l1">Nombre</h3>
+                <h1 class="l1">{{user['first_name']}}</h1>
+            </div>
+            <div class="conText">
+                <h3 class="l1">Correo Electronico</h3>
+                <h1 class="l1">{{user['email']}}</h1>
+            </div>
+            <div class="conTexts">
+                <h3 class="l1">Descripción</h3>
+                <h1 class="l1">{{descripcion}}</h1>
+            </div>
          </div>
      </div>
     </div>
