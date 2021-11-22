@@ -182,11 +182,10 @@ h1{
 .conContacto{
     background: rgba(3, 3, 3, 0.62);
     border-radius: 20px;
-    max-width:550px;
-    width: 100%;
-    height: 100px;
+    max-width:650px;
+    width: 94%;
+    height: 60px;
     margin-top: 10px;
-    margin-left: 0px;
 }
 
 .circulo{
@@ -327,6 +326,11 @@ button,.buttons,.lsbB{
     margin-left: 10px;
     border-radius: 20px;
 }
+
+.lsbB:hover,.lsbB:active{
+	background:#6c0b0b;
+}
+
 
 button:hover,button:active,.buttons:hover,.buttons:active{
     background: #085b10;;

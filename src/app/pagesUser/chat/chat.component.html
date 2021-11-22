@@ -9,25 +9,27 @@
                 </div>
             </div>
     
-           <div class="containerGrups">
-             <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
-             <label class="circlePhoto">x<input type="file" name="image" accept="image/png, .jpeg, .jpg, image/gif"/></label>
-           </div>
-    
-           <div class="conComponet">
-               <div class="conComponets">
-                   <label class="ls1">Nombre del grupo</label>
-                   <input type="text">
+           <form  [formGroup]="formGrup" (ngSubmit)="guardarGrupo()">
+            <div class="containerGrups">
+                <img [src]="foto" alt="">
+                <label class="circlePhoto">x<input type="file" name="image"(change)="selectImage($event)" accept="image/png, .jpeg, .jpg, image/gif"/></label>
+              </div>
+       
+              <div class="conComponet">
+                  <div class="conComponets">
+                      <label class="ls1">Nombre del grupo</label>
+                      <input type="text" formControlName="name">
+                  </div>
+                  <div class="conComponets">
+                   <label for="">Descripción</label>
+                   <textarea name="" id="" cols="30" rows="10" formControlName="descripcion"></textarea>
                </div>
-               <div class="conComponets">
-                <label for="">Descripción</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-            </div>
-            <button>Guardar</button>
-           </div>
+               <button [disabled]="formGrup.valid==false" >Guardar</button>
+              </div>
+           </form>
         </div>
         
-        <div class="lsB" >
+        <div class="lsB" *ngIf="verificar">
             <div class="containerTwo">
                 <div class="con">
                     <div class="circulo">
@@ -36,136 +38,23 @@
                 </div>
 
                 <div class="conButtons">
-                    <button class="buttons">Agregar personal</button>
+                    <button class="buttons" (click)=" activarVentana()">Agregar personal</button>
                 </div>
 
                 <div class="cons">              
               
-                 <div class="conContacto">
-                     <div class="conDatos">
-                        <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                        <div  class="conText">
-                            <h1>Silica Ayanami </h1>
+                    <div class="conContacto">
+                        <div class="conDatos">
+                            <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
+                            <div  class="conText">
+                                <h1>Silica Ayanami </h1>
+                            </div>
                         </div>
-                     </div>
-                     <div class="containerButton"> 
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
+                        <div class="containerButton"> 
+                            <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
+                        </div>
                     </div>
-                 </div>
 
-                 <div class="conContacto">
-                    <div class="conDatos">
-                       <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                       <div  class="conText">
-                           <h1>Silica Ayanami efvojfvjfivjfvjfvjfvjfvfjvñfvfvñovvljfvjvv</h1>
-                       </div>
-                    </div>
-                    <div class="containerButton"> 
-                       <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                   </div>
-                </div>
-
-                <div class="conContacto">
-                    <div class="conDatos">
-                       <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                       <div  class="conText">
-                           <h1>Silica Ayanami </h1>
-                       </div>
-                    </div>
-                    <div class="containerButton"> 
-                       <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                   </div>
-                </div>
-
-                <div class="conContacto">
-                    <div class="conDatos">
-                       <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                       <div  class="conText">
-                           <h1>Silica Ayanami </h1>
-                       </div>
-                    </div>
-                    <div class="containerButton"> 
-                       <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                   </div>
-                </div>
-
-
-                <div class="conContacto">
-                    <div class="conDatos">
-                       <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                       <div  class="conText">
-                           <h1>Silica Ayanami </h1>
-                       </div>
-                    </div>
-                    <div class="containerButton"> 
-                       <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                   </div>
-                </div>
-
-
-                <div class="conContacto">
-                    <div class="conDatos">
-                       <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                       <div  class="conText">
-                           <h1>Silica Ayanami </h1>
-                       </div>
-                    </div>
-                    <div class="containerButton"> 
-                       <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                   </div>
-                </div>
-
-
-                <div class="conContacto">
-                    <div class="conDatos">
-                       <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                       <div  class="conText">
-                           <h1>Silica Ayanami </h1>
-                       </div>
-                    </div>
-                    <div class="containerButton"> 
-                       <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                   </div>
-                </div>
-
-
-                <div class="conContacto">
-                    <div class="conDatos">
-                       <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                       <div  class="conText">
-                           <h1>Silica Ayanami </h1>
-                       </div>
-                    </div>
-                    <div class="containerButton"> 
-                       <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                   </div>
-                </div>
-
-
-                <div class="conContacto">
-                    <div class="conDatos">
-                       <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                       <div  class="conText">
-                           <h1>Silica Ayanami </h1>
-                       </div>
-                    </div>
-                    <div class="containerButton"> 
-                       <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                   </div>
-                </div>
-
-                <div class="conContacto">
-                    <div class="conDatos">
-                       <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
-                       <div  class="conText">
-                           <h1>Silica Ayanami </h1>
-                       </div>
-                    </div>
-                    <div class="containerButton"> 
-                       <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                   </div>
-                </div>
-            
                 </div>
 
                 <div class="conButtons">
@@ -178,14 +67,14 @@
     <div class="contenedor">
         <div class="overlay" id="overlay">
           <div class="popup" id="popup">
-            <button class="close" (click)="close()" id="close">x</button>
-            <h3>Elige tu imagen</h3>
-            <form >
+            <h3>Busqueda de usario</h3>
+            <form [formGroup]="form" (ngSubmit)="guardar()">
               <div class="contenedor-inputs">
-                <input type="text"formControlName="titleData" class="textContainer">
+                <input type="text" class="textContainer" placeholder="Busqueda" formControlName="username">
               </div>
-              <input id="btn-cerrar-popup" type="submit" class="btn-submit" value="Guardar" class="button">
+               <button id="btn-cerrar-popup" class="btn-submit"  [disabled]="form.valid==false" class="button">Guardar</button><br>
             </form>
+              <button class="close"  id="close" (click)="close()" class="buttonC">Cerrar</button>
           </div>
         </div>
       </div>

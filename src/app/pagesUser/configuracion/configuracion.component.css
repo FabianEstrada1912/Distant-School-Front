@@ -34,6 +34,12 @@ a{
     font-size: 30px;
 }
 
+.ls{
+    font-size: 20px;
+    color:black;
+    background: red;
+}
+
 button{
     left: 70%;
     border-radius: 8px;

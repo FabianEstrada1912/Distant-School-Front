@@ -15,6 +15,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildForm();
+    if(this.userService.user){
+      window.location.replace("/Dashboard");
+    }
   }
 
   private buildForm() {

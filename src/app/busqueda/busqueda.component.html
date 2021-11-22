@@ -4,7 +4,7 @@
 
         <div class="nav-btn">
             <div class="divButton">
-                <button class="buttonHeader" > < </button>
+                <button class="buttonHeader" (click)="cerrar()"> < </button>
             </div>
 
             <div class="divBusqueda">
@@ -35,11 +35,14 @@
                        <h3>{{datos['first_name']}} {{datos['last_name']}}</h3>
                     </div>
                 </div>
-                <div class="conButtons">
-                   <button class="lsbM"><img class="icon"  src="assets/icon/contactos.svg" alt="svg"></button>
-                   <button class="lsbB"><img class="icon"  src="assets/icon/mensaje.svg" alt="svg"></button>
+                <div class="conButtons" id="ds">
+                   <button class="lsbM"  *ngIf="verificar"><img class="icon"  src="assets/icon/contactos.svg" alt="svg"></button>
+                   <button class="lsbB" *ngIf="verificar"><img class="icon"  src="assets/icon/mensaje.svg" alt="svg"></button>
+                   <button class="lsbC" *ngIf="verificarAgregado" ><img class="icon"  src="assets/icon/comprobado.svg" alt="svg"></button>
                 </div>
             </div>
+           
         </div>
     </div>
+
 </section>

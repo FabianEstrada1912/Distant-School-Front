@@ -8,7 +8,7 @@
          </div>
   
          <div class="containerEditar">
-             <img src="https://i.pinimg.com/564x/7b/cb/e8/7bcbe80ddf00315bab91d13404c5d592.jpg" alt="">
+             <img [src]="foto" alt="">
              <div class="conDatos">
                 <h1 style="font-size: 30px;">{{user['username']}}</h1>
              </div>
@@ -16,7 +16,7 @@
          <div class="components">
             <div class="conText">
                 <h3 class="l1">Nombre</h3>
-                <h1 class="l1">{{user['first_name']}}</h1>
+                <h1 class="l1">{{user['first_name']}} {{user['last_name']}}</h1>
             </div>
             <div class="conText">
                 <h3 class="l1">Correo Electronico</h3>

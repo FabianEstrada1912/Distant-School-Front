@@ -9,122 +9,19 @@
 
             <div class="containers">
 
-                <div class="conAmigos">
+                <div class="conAmigos" *ngFor = 'let lista of lista'>
                     <div class="conDatos">
-                        <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
+                        <img src="{{lista['photo']}}" alt="">
                         <div class="conText">
-                            <h1>Silica Ayanami dvdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</h1>
+                            <h1>{{lista['first_name']}} {{lista['last_name']}}</h1>
                         </div>
                     </div>
                     <div class="containerButton"> 
-                        <button class="lsb" ><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
+                        <button class="lsb" (click)="agregar(lista['id'])"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
+                        <button class="lsbB" (click)="borrar(lista['idF'])"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
                     </div>
                 </div>
 
-                <div class="conAmigos">
-                    <div class="conDatos">
-                        <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
-                        <div class="conText">
-                            <h1>Silica Ayanamib</h1>
-                        </div>
-                    </div>
-                    <div class="containerButton"> 
-                        <button class="lsb"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                    </div>
-                </div>
-                
-                <div class="conAmigos">
-                    <div class="conDatos">
-                        <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
-                        <div class="conText">
-                            <h1>Silica Ayanamib</h1>
-                        </div>
-                    </div>
-                    <div class="containerButton"> 
-                        <button class="lsb"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                    </div>
-                </div>
-
-                <div class="conAmigos">
-                    <div class="conDatos">
-                        <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
-                        <div class="conText">
-                            <h1>Silica Ayanamib</h1>
-                        </div>
-                    </div>
-                    <div class="containerButton"> 
-                        <button class="lsb"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                    </div>
-                </div>
-                
-                <div class="conAmigos">
-                    <div class="conDatos">
-                        <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
-                        <div class="conText">
-                            <h1>Silica Ayanamib</h1>
-                        </div>
-                    </div>
-                    <div class="containerButton"> 
-                        <button class="lsb"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                    </div>
-                </div>
-
-                <div class="conAmigos">
-                    <div class="conDatos">
-                        <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
-                        <div class="conText">
-                            <h1>Silica Ayanamib</h1>
-                        </div>
-                    </div>
-                    <div class="containerButton"> 
-                        <button class="lsb"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                    </div>
-                </div>
-
-                <div class="conAmigos">
-                    <div class="conDatos">
-                        <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
-                        <div class="conText">
-                            <h1>Silica Ayanamib</h1>
-                        </div>
-                    </div>
-                    <div class="containerButton"> 
-                        <button class="lsb"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                    </div>
-                </div>
-
-                <div class="conAmigos">
-                    <div class="conDatos">
-                        <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
-                        <div class="conText">
-                            <h1>Silica Ayanamib</h1>
-                        </div>
-                    </div>
-                    <div class="containerButton"> 
-                        <button class="lsb"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                    </div>
-                </div>
-
-                <div class="conAmigos">
-                    <div class="conDatos">
-                        <img src="https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg" alt="">
-                        <div class="conText">
-                            <h1>Silica Ayanamib</h1>
-                        </div>
-                    </div>
-                    <div class="containerButton"> 
-                        <button class="lsb"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
-                        <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
-                    </div>
-                </div>
                 
             </div>
         </div>

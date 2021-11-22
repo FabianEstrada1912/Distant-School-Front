@@ -15,6 +15,9 @@ export class EditUserComponent implements OnInit {
   user:any={};
   descripcion :any={};
   id:string="";
+  foto :any;
+  fotoAuxiliar:any;
+  images:any;
 
   private buildForm() {
     this.form = this.formBuilder.group({
@@ -28,11 +31,21 @@ export class EditUserComponent implements OnInit {
   }
   
   ngOnInit(){
-    this.descripcion = JSON.parse(this.userService.getDescripcion() || '{}');
     this.user =JSON.parse(this.userService.getUser() || '{}');
+    this.descripcion =JSON.parse(this.userService.getDescripcion() || '{}');
+    this.userService.getProfile(Number(this.user['id'])).subscribe(
+      (response)=>{
+        if(response['photo'] == null){
+          this.foto = "assets/imagen/imagen2.png";
+        }else{
+          this.foto =this.userService.getUrl()+response['photo'];
+        }
+      },(error)=>{ console.log('error',error)}
+    );
+
     this.id= this.user['id'];
+    this.fotoAuxiliar = this.foto;
     this.buildForm();
-    console.log(this.form.value)
   }
 
   guardar(){
@@ -60,5 +73,39 @@ export class EditUserComponent implements OnInit {
       },(error)=>{ console.log('error',error)}
     )
   }
+
+  selectImage(event:any) {
+
+    
+    if (event.target.files && event.target.files[0]) {
+
+      var mensaje = confirm("deseas cambiar la foto del perfil?");
+
+      if (mensaje) {
+        const file = event.target.files[0];
+        // image preview
+        const reader = new FileReader();
+        reader.onload = e => {
+          this.foto= reader.result;
+          this.images=file;
+      
+          const formData = new FormData();
+          formData.append('file',this.images);
+          this.userService.getPhoto(formData,Number(this.user['id'])).subscribe(
+          (response)=>{
+             
+          }) 
+        }
+        reader.readAsDataURL(file);
+      }else {
+        this.foto = this.fotoAuxiliar;
+        this.images = this.fotoAuxiliar;
+       }
+    }else{
+      this.foto = this.fotoAuxiliar;
+      this.images = this.fotoAuxiliar;
+    }
+  }
+
 
 }

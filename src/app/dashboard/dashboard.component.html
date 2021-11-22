@@ -1,33 +1,63 @@
-<section>
-    <div class="container">
-        <div class="con">
-            <div class="barra">
-                <div class="conSearch">
-                    <form >
-                        <input class="search"  type="search"  placeholder="Busqueda" >
-                    </form>
-                </div>
-            </div>
-            <div class="lista">
+<div id="container">
+	<aside>
+		<header>
+			<form  [formGroup]="form" (ngSubmit)="guardar()">
+				<input type="text" placeholder="search" formControlName="username">
+			</form>
+		</header>
+		<ul>
+			<div *ngFor = 'let lista of listaAmigos'>
+				<li (click)="seleccion(lista['id'])">
+					<img src="{{lista['photo']}}" alt="">
+					<div>
+						<h2>{{lista['first_name']}}</h2>
+					</div>
+				</li>
+			</div>			
+		</ul>
+	</aside>
+	<main>
+		<header>
+			<img [src]="fotoEmisor" alt="">
+			<div>
+				<br>
+				<h2>{{nameEmisor}}</h2>
+			</div>
+			<img style="margin-left:650px;margin-top:-50px" routerLink="/configuracion" src="assets/icon/conjunto-de-engranajes.svg" alt="">
+		</header>
+		<ul id="chat">
 
-            </div>
-
-            <div class="confi">
-
-            </div>
-        </div>
-        <div class="ls">
-            <div class="barraChat">
-
-            </div>
-
-            <div class="containerChat">
-
-            </div>
-
-            <div class="conButtons">
-
-            </div>
-        </div>
-    </div>    
-</section>
+			<div  *ngFor="let item of messageList" >
+				<li class="you" *ngIf="item['mineF']">	
+					<div class="entete">
+						<h2>{{item.friends}}</h2>
+					</div>
+					<div class="triangle"></div>
+					<div class="message">
+						{{item.message}}
+					</div>
+				</li>
+			</div>
+			
+			<div  *ngFor="let item of messageList" >
+				<li class="me" *ngIf="item['mine']">
+					<div class="entete">
+						<h2>{{item.userName}}</h2>
+					</div>
+					<div class="triangle"></div>
+					<div class="message">
+						{{item.message}}
+					</div>
+				</li>
+			</div>
+			
+		</ul>
+		<footer>
+			<label class="circlePhoto">x<input type="file" name="datos"/></label>
+			<form [formGroup]="formMessage" (ngSubmit)="sendMessage()">
+				<textarea placeholder="Type your message" formControlName="message"></textarea>
+				<button class="butons"> > </button>
+			</form>
+		</footer>
+	</main>
+</div>

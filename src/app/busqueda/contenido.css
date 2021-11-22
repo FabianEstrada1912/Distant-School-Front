@@ -97,7 +97,6 @@ img{
 .lsbB,.lsbM,.lsbC{
     height: 35px;
     width: 35px;
-    margin-left: 10px;
     border-radius: 15px;
     box-shadow: none;
 	border: none;
@@ -106,10 +105,19 @@ img{
 
 .lsbM{
     background: #142196;
+    position: absolute;
+    margin-left: 10px;
+}
+
+.lsbB{
+    margin-left: 50px;
+    position: absolute;
 }
 
 .lsbC{
   background:  #118E43;
+  position: absolute;
+  margin-left: 90px;
 }
 
 .icon{

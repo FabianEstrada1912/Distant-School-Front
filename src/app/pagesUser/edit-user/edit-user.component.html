@@ -8,8 +8,8 @@
          </div>
   
          <div class="containerEditar">
-             <img src="https://i.pinimg.com/564x/7b/cb/e8/7bcbe80ddf00315bab91d13404c5d592.jpg" alt="">
-             <label class="circlePhoto">x<input type="file" name="image" accept="image/png, .jpeg, .jpg, image/gif"/></label>
+            <img [src]="foto" alt="">
+            <label class="circlePhoto">x<input type="file" name="images" (change)="selectImage($event)" accept="image/png, .jpeg, .jpg, image/gif"/></label>
          </div>
          <form  [formGroup]= "form"  (ngSubmit)="guardar()">
             <div class="components">

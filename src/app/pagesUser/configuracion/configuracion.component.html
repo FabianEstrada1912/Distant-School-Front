@@ -4,10 +4,11 @@
         <a routerLink="/configuracion" >Distant School</a>
     </div>
     <div>
+        <button routerLink="/Dashboard" >Regresar al home</button>
         <button routerLink="/configuracion/editarUsuario" routerLinkActive="active">Editar Perfil</button>
         <button routerLink="/configuracion/aceptacionAmigos" routerLinkActive="active">Solicitud de amistad</button>
         <button routerLink="/configuracion/creacion-grupos" >Crear grupo</button>
-        <button>Cerrar Sección</button>
+        <button (click)="cerrar()">Cerrar Sección</button>
     </div>
 </aside>
 
