@@ -1,6 +1,6 @@
 <section>
     <div class="lsd">
-        <div class="ls">
+        <div  *ngIf="buttonVerifi==false" class="ls">
             <div class="container">
                 <div class="con">
                     <div class="circulo">
@@ -12,7 +12,7 @@
            <form  [formGroup]="formGrup" (ngSubmit)="guardarGrupo()">
             <div class="containerGrups">
                 <img [src]="foto" alt="">
-                <label class="circlePhoto">x<input type="file" name="image"(change)="selectImage($event)" accept="image/png, .jpeg, .jpg, image/gif"/></label>
+                <label *ngIf="buttonVerifi==false" class="circlePhoto">x<input type="file" name="image"(change)="selectImage($event)" accept="image/png, .jpeg, .jpg, image/gif"/></label>
               </div>
        
               <div class="conComponet">
@@ -24,7 +24,7 @@
                    <label for="">Descripción</label>
                    <textarea name="" id="" cols="30" rows="10" formControlName="descripcion"></textarea>
                </div>
-               <button [disabled]="formGrup.valid==false" >Guardar</button>
+               <button *ngIf="buttonVerifi==false" [disabled]="formGrup.valid==false" >Guardar</button>
               </div>
            </form>
         </div>
@@ -32,7 +32,8 @@
         <div class="lsB" *ngIf="verificar">
             <div class="containerTwo">
                 <div class="con">
-                    <div class="circulo">
+                    <h1 style="text-align: center !important;margin-top: 10px;">{{grupo['name']}}</h1>
+                    <div class="circulos">
                      <h3>X</h3>
                     </div>
                 </div>
@@ -43,22 +44,22 @@
 
                 <div class="cons">              
               
-                    <div class="conContacto">
+                    <div class="conContacto" *ngFor = 'let lista of lista'>
                         <div class="conDatos">
-                            <img class="photo" src="https://i.pinimg.com/564x/99/3b/b5/993bb5aa3c4334bf7ebba106fa1fd5a7.jpg" alt="">
+                            <img class="photo" [src]="lista['photo']" alt="">
                             <div  class="conText">
-                                <h1>Silica Ayanami </h1>
+                                <h1>{{lista['first_name']}} {{lista['last_name']}}</h1>
                             </div>
                         </div>
                         <div class="containerButton"> 
-                            <button class="lsbB"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
+                            <button class="lsbB" (click)=" eliminar(lista['id'])"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="conButtons">
-                    <button class="buttons">Guardar</button>
+                    <button class="buttons" (click)=" guardarDatos()">Guardar</button>
                  </div>
 
             </div>

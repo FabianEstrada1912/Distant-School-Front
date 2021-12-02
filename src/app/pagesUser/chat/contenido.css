@@ -70,7 +70,7 @@ section{
 .lsB{
     position: fixed;
     height: 680px;
-    top: 32.2rem;
+    top: 5.2rem;
     left: 203px;
     width:1000px;
     flex-direction: column;
@@ -155,11 +155,8 @@ section{
 h1{
     color:#fff;
     font-size: 20px;
-    margin-left: -210px;
     margin-top:0px;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow: ellipsis;
+    text-align:left;
 }
 
 .conText{
@@ -193,6 +190,16 @@ h1{
     width: 32px;
     height: 32px;
     margin: 5px 630px;
+    font-size: 20px;
+    border-radius: 80px;
+    background: #C4C4C4;
+}
+
+.circulos{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    margin: -30px 630px;
     font-size: 20px;
     border-radius: 80px;
     background: #C4C4C4;

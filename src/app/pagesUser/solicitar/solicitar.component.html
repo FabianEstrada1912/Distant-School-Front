@@ -11,13 +11,13 @@
 
                 <div class="conAmigos" *ngFor = 'let lista of lista'>
                     <div class="conDatos">
-                        <img src="{{lista['photo']}}" alt="">
+                        <img [src]="lista['photo']" alt="">
                         <div class="conText">
                             <h1>{{lista['first_name']}} {{lista['last_name']}}</h1>
                         </div>
                     </div>
                     <div class="containerButton"> 
-                        <button class="lsb" (click)="agregar(lista['id'])"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
+                        <button class="lsb" (click)="agregar(lista['id'],lista['idF'])"><img class="icon"  src="assets/icon/comprobado.svg" alt=""></button>
                         <button class="lsbB" (click)="borrar(lista['idF'])"><img class="icon"  src="assets/icon/basura.svg" alt="svg"></button>
                     </div>
                 </div>

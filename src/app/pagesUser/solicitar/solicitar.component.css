@@ -188,18 +188,14 @@ button{
 h1{
     color:#fff;
     font-size: 20px;
-    margin-left:0px;
     margin-top:0px;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow: ellipsis;
-    
+    text-align:left;
 }
 
 .conText{
     margin-top: -50px;
     height: 30px;
-    margin-left: 110px;
+    margin-left: 120px;
     overflow:hidden;
     white-space:nowrap;
     text-overflow: ellipsis;

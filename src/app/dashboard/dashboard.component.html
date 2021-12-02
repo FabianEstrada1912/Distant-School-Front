@@ -13,7 +13,16 @@
 						<h2>{{lista['first_name']}}</h2>
 					</div>
 				</li>
-			</div>			
+			</div>	
+			
+			<div *ngFor = 'let lista of listaChat'>
+				<li (click)="seleccion2(lista['id'])">
+					<img src="{{lista['photo']}}" alt="">
+					<div>
+						<h2>{{lista['name']}}</h2>
+					</div>
+				</li>
+			</div>	
 		</ul>
 	</aside>
 	<main>
@@ -27,11 +36,29 @@
 		</header>
 		<ul id="chat">
 
+			<div  *ngFor="let item of listaReceptor" >
+				<li class="me" >
+					
+					<div class="triangle"></div>
+					<div class="message">
+						{{item['mensaje']}}
+					</div>
+				</li>
+			</div>
+            
+			<div  *ngFor="let item of listaEmisor" >
+				<li class="you">	
+					
+					<div class="triangle"></div>
+					<div class="message">
+						{{item['mensaje']}}
+					</div>
+				</li>
+			</div>
+
 			<div  *ngFor="let item of messageList" >
 				<li class="you" *ngIf="item['mineF']">	
-					<div class="entete">
-						<h2>{{item.friends}}</h2>
-					</div>
+					
 					<div class="triangle"></div>
 					<div class="message">
 						{{item.message}}
@@ -41,9 +68,7 @@
 			
 			<div  *ngFor="let item of messageList" >
 				<li class="me" *ngIf="item['mine']">
-					<div class="entete">
-						<h2>{{item.userName}}</h2>
-					</div>
+					
 					<div class="triangle"></div>
 					<div class="message">
 						{{item.message}}

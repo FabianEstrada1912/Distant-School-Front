@@ -18,6 +18,8 @@ export class UserService {
   descripcion =  localStorage.getItem("descripcion");
   busqueda=  localStorage.getItem("busqueda");
   cambioBusqueda = localStorage.getItem("cambio");
+  mensaje = localStorage.getItem("mensajes");
+  grupo = localStorage.getItem("grupo");
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json','Authorization':'Token '+this.token});
   
   constructor(protected http : HttpClient) { 
@@ -40,6 +42,10 @@ export class UserService {
     return this.http.post(this.url+'Search/Search/',username,{headers:this.httpHeaders})
   }
 
+  getBusquedaFriends(id:Number,ids:Number):Observable<any>{
+    return this.http.get(this.url+'Search/SearchF/'+id+"/"+ids+"/",{headers:this.httpHeaders})
+  }
+
   getFriendEspera(id:Number,friend:any){
     return this.http.post(this.url+"Friend/Friend/"+id+"/",friend,{headers:this.httpHeaders})
   }
@@ -52,38 +58,45 @@ export class UserService {
     return this.http.delete(this.url+"Friend/Friend/"+id+"/",{headers:this.httpHeaders})
   }
 
+  getFriendSolicitud(id:Number,friend:any){
+    return this.http.post(this.url+"Friend/Agregar/"+id+"/",friend,{headers:this.httpHeaders})
+  }
+
   getPhoto(photo:FormData,id:Number){
     return this.http.put(this.urls+'api/foto/'+id+"/",photo);
   }
 
-  joinRoom(data:any): void {
-    this.socket.emit('join', data);
+  getPhotoGrupo(photo:FormData,id:Number){
+    return this.http.put(this.urls+'api/fotoGrupo/'+id+"/",photo);
   }
 
-  sendMessage(data:any): void {
-    this.socket.emit('message', data);
+  getVisualizsarGrupo(user:any):Observable<any>{
+    return this.http.post(this.url+"Grupo/Ver/",user,{headers:this.httpHeaders})
   }
 
-  getMessage(): Observable<any> {
-    return new Observable<{user: string, message: string}>(observer => {
-      this.socket.on('new message', (data) => {
-        observer.next(data);
-      });
-
-      return () => {
-        this.socket.disconnect();
-      }
-    });
+  getVisualizsarGrupo2(id:Number):Observable<any>{
+    return this.http.get(this.url+"Grupo/VerChat/"+id+"/",{headers:this.httpHeaders})
   }
 
-  getStorage() {
-    var storage: any;
-    storage = localStorage.getItem('chats');
-    return storage ? JSON.parse(storage) : [];
+  getCrearGrupo(grupo:any):Observable<any>{
+    return this.http.post(this.url+"Grupo/Chat/",grupo,{headers:this.httpHeaders})
   }
 
-  setStorage(data:any) {
-    localStorage.setItem('chats', JSON.stringify(data));
+
+  getAgregarParticipanteGrupo(grupo:any):Observable<any>{
+    return this.http.post(this.url+"ListaGrupo/Registro/",grupo,{headers:this.httpHeaders})
+  }
+
+  getVerParticipanteGrupo(grupo:any):Observable<any>{
+    return this.http.post(this.url+"ListaGrupo/Ver/",grupo,{headers:this.httpHeaders})
+  }
+
+  getEliminarParticipanteGrupo(id:Number){
+    return this.http.delete(this.url+"ListaGrupo/Eliminar/"+id+"/",{headers:this.httpHeaders})
+  }
+
+  getMostrarMensaje(id:Number,idU:Number):Observable<any>{
+    return this.http.get(this.url+"Conversacion/ConversacionVer/"+id+"/"+idU+"/",{headers:this.httpHeaders})
   }
 
   getUser(){
@@ -108,6 +121,14 @@ export class UserService {
 
   getUrl(){
     return this.urls;
+  }
+
+  getMensaje(){
+    return this.mensaje;
+  }
+
+  getGrupos(){
+    return this.grupo;
   }
 }
 

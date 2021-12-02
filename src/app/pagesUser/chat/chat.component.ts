@@ -13,17 +13,46 @@ export class ChatComponent implements OnInit {
     form!: FormGroup;
     formGrup!: FormGroup;
     verificar = true;
+    buttonVerifi = false;
     foto :any;
     fotoAuxiliar:any;
     images:any;
+    user:any={};
+    grupo:any = {}
+    lista : [] = [];
+    friend:any = {};
 
     constructor(private formBuilder: FormBuilder,private userService : UserService) { }
 
     ngOnInit(): void {
+      this.user =JSON.parse(this.userService.getUser() || '{}');
       this.buildForm();
       this.grupos();
       this.verificar = false;
-      this.foto = "https://i.pinimg.com/564x/0d/60/14/0d6014d3db35db2cadcf02a782330938.jpg";
+      if(this.userService.getGrupos() != null){
+        this.verificar = true;
+        this.buttonVerifi = true;
+        this.grupo = JSON.parse(this.userService.getGrupos()|| '{}');
+      
+        this.userService.getVerParticipanteGrupo({"chat":Number(this.grupo['id'])}).subscribe(
+          (response)=>{
+            this.friend = response ;
+           
+            for (let i in this.friend){
+              if (this.friend[i].photo == null){
+                this.friend[i].photo = "assets/imagen/imagen2.png";
+              } else{
+                var photo = this.userService.getUrl()+this.friend[i].photo;
+                this.friend[i].photo = photo;
+              }
+            }
+            this.lista = JSON.parse(JSON.stringify(this.friend || '{}'));
+          }
+        )
+      }else{
+       
+      }
+      this.foto = "assets/imagen/imagen2.png";
     }
 
     private buildForm() {
@@ -36,6 +65,7 @@ export class ChatComponent implements OnInit {
       this.formGrup= this.formBuilder.group({
          name : ['', [Validators.required]],
          descripcion :  ['', [Validators.required]],
+         user :  [Number(this.user['id']), [Validators.required]],
       });
     }
 
@@ -55,7 +85,38 @@ export class ChatComponent implements OnInit {
     }
 
     guardarGrupo(){
-      this.verificar = true;
+      if (this.images == null){
+        alert("tienes que poner un imagen")
+      }else{
+        const formData = new FormData();
+        var id :any
+        formData.append('file',this.images);
+        this.userService.getCrearGrupo(this.formGrup.value).subscribe(
+           (response)=>{
+             this.grupo = response;
+             console.log(this.grupo)
+             id = response['id'];
+             localStorage.setItem('grupo',JSON.stringify(response));
+             var participante={
+               "user":Number(this.user['id']),
+               "chat":response['id'] 
+             }
+             this.userService.getAgregarParticipanteGrupo(participante).subscribe(
+               (respo)=>{
+
+               }
+             )
+             this.verificar = true;
+             this.buttonVerifi = true;
+             this.userService.getPhotoGrupo(formData,response['id']).subscribe(
+                (res)=>{
+                }
+             )
+           }
+
+          )
+          console.log(this.grupo)
+        }
     }
 
     activarVentana(){
@@ -87,6 +148,27 @@ export class ChatComponent implements OnInit {
       }else{
         this.foto = this.fotoAuxiliar;
         this.images = this.fotoAuxiliar;
+      }
+    }
+
+    eliminar(id:any){
+      console.log(id)
+      this.userService.getEliminarParticipanteGrupo(Number(id)).subscribe(
+        (response)=>{
+          if(response == "ya se pudo eliminar"){
+            location.reload();
+          }else{
+            alert("lo sentimos hubo un error")
+          }
+        }
+      )
+    }
+
+    guardarDatos(){
+      var mensaje = confirm("desas terminar el proceso de agregar usuario al chat que creaste")
+      if (mensaje) {
+        localStorage.removeItem('grupo');
+        location.reload();
       }
     }
   

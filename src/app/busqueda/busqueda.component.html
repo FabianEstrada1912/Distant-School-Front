@@ -29,16 +29,16 @@
 
             <div class="con"  *ngFor = 'let datos of datos'>
                 <div class="conDatos" >
-                    <img src="https://i.pinimg.com/564x/ab/14/f7/ab14f798f01530f3c4763d3702a9fe48.jpg" alt="">
+                    <img [src]="datos['photo']" alt="">
                     <div class="conTexto">
                        <h1>{{datos['username']}}</h1>
                        <h3>{{datos['first_name']}} {{datos['last_name']}}</h3>
                     </div>
                 </div>
                 <div class="conButtons" id="ds">
-                   <button class="lsbM"  *ngIf="verificar"><img class="icon"  src="assets/icon/contactos.svg" alt="svg"></button>
-                   <button class="lsbB" *ngIf="verificar"><img class="icon"  src="assets/icon/mensaje.svg" alt="svg"></button>
-                   <button class="lsbC" *ngIf="verificarAgregado" ><img class="icon"  src="assets/icon/comprobado.svg" alt="svg"></button>
+                   <button class="lsbM"  *ngIf="verificar" (click)="seleccionar(1,datos['id'])" ><img class="icon"  src="assets/icon/contactos.svg" alt="svg"></button>
+                   <button class="lsbB" *ngIf="verificar" (click)="seleccionar(2,datos['id'])"><img class="icon"  src="assets/icon/mensaje.svg" alt="svg"></button>
+                   <button class="lsbC" *ngIf="verificarAgregado" (click)="guardarParticipante(datos['id'])" ><img class="icon"  src="assets/icon/comprobado.svg" alt="svg"></button>
                 </div>
             </div>
            

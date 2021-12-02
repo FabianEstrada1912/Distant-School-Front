@@ -22,6 +22,7 @@ export class SolicitarComponent implements OnInit {
       (response)=>{
        
         this.friend = response ;
+        console.log(this.friend)
         for (let i in this.friend){
            if (this.friend[i].photo == null){
              this.friend[i].photo = "assets/imagen/imagen2.png";
@@ -30,7 +31,7 @@ export class SolicitarComponent implements OnInit {
              this.friend[i].photo = photo;
            }
         }
-        this.lista = this.friend;
+        this.lista = JSON.parse(JSON.stringify(this.friend || '{}'));
         console.log(this.lista)
       },(error)=>{ console.log('error',error)}
 
@@ -50,9 +51,10 @@ export class SolicitarComponent implements OnInit {
     )
   }
 
-  agregar(id:any){
+  agregar(id:any,idG:any){
     var friends = {
       'idFriends':String(id),
+      'id':idG,
       'check':1
     }
 
